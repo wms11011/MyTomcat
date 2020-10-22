@@ -19,7 +19,6 @@ public class MyServer {
 
         while (true){
             socket = serverSocket.accept();
-
             InputStream inputStream = socket.getInputStream();
             OutputStream outputStream = socket.getOutputStream();
 
