@@ -23,12 +23,10 @@ public class MyRequest {
         if((len = inputStream.read(bytes))>0){
             str = new String(bytes,0,len);
         }
-
-        assert str != null;
         String data = str.split("\n")[0];
         String[] params = data.split(" ");
-        requestMethod = params[0];
-        requestUrl = params[1];
+        this.requestMethod = params[0];
+        this.requestUrl = params[1];
     }
 
     public String getRequestMethod() {

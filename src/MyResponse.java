@@ -16,11 +16,10 @@ public class MyResponse {
     public void write(String str) throws IOException {
         StringBuilder sb = new StringBuilder();
         sb.append("HTTP/1.1 200 OK\n")
-          .append("Content-Type:test/html\n")
-          .append("\r\n")
-          .append("<html>")
-                .append("<body>")
-                   .append("<h1>" + str+"</h1>")
+                .append("Content-Type:text/html\n")
+                .append("\r\n")
+                .append("<html>")
+                .append("<body>").append("<h1>").append(str).append("</h1>")
                 .append("</body>")
           .append("</html>");
         outputStream.write(sb.toString().getBytes());

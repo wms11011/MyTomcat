@@ -13,7 +13,7 @@ import java.net.Socket;
  */
 public class MyServer {
 
-    public static void StartServer(int port) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public static void StartServer(int port) throws Exception {
         ServerSocket serverSocket = new ServerSocket(port);
         Socket socket = null;
 
@@ -33,6 +33,15 @@ public class MyServer {
                 MyServlet myServlet = constructor.newInstance();
                 myServlet.service(request,response);
             }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        try {
+            StartServer(10086);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
